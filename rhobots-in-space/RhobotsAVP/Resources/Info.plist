@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDisplayName</key>
+  <string>Rhobots</string>
+  <key>UIApplicationSceneManifest</key>
+  <dict>
+    <key>UIApplicationPreferredDefaultSceneSessionRole</key>
+    <string>UIWindowSceneSessionRoleApplication</string>
+    <key>UIApplicationSupportsMultipleScenes</key>
+    <true/>
+  </dict>
+
+  <!-- Part of the build checklist from day one, per the spec's carry-over
+       from the F1R3Skein bring-up: a missing usage description is a crash on
+       first gesture, found on device and not in the simulator. -->
+  <key>NSHandsTrackingUsageDescription</key>
+  <string>Rhobots uses hand tracking so you can build and inspect rho terms with your hands.</string>
+  <key>NSWorldSensingUsageDescription</key>
+  <string>Rhobots places the live plane in your surroundings.</string>
+
+  <!-- The executive runs on a Mac on the same network, over ws:// on the
+       local link. This is the narrowest exception that allows it. -->
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsLocalNetworking</key>
+    <true/>
+  </dict>
+  <key>NSLocalNetworkUsageDescription</key>
+  <string>Rhobots connects to a rho executive running on your Mac.</string>
+  <key>NSBonjourServices</key>
+  <array>
+    <string>_f1r3x._tcp</string>
+  </array>
+</dict>
+</plist>

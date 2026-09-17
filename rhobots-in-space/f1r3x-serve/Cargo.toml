@@ -1,0 +1,24 @@
+[package]
+name = "f1r3x-serve"
+description = "The communication harness: a rho executive on a Mac, served to the Rhobots Vision Pro client over WebSocket"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[lib]
+name = "f1r3x_serve"
+path = "src/lib.rs"
+
+[[bin]]
+name = "f1r3x-serve"
+path = "src/main.rs"
+
+[dependencies]
+k1ndl1ng-parse = { path = "../k1ndl1ng-parse" }
+f1r3x = { path = "../f1r3x" }
+f1r3x-ffi = { path = "../f1r3x-ffi" }
+k1ndl1ng-norm = { path = "../k1ndl1ng-norm" }
+k1ndl1ng-campf1r3 = { path = "../k1ndl1ng-campf1r3" }
+campf1r3-core = { path = "../campf1r3-core" }
+b3ll0ws = { path = "../b3ll0ws" }

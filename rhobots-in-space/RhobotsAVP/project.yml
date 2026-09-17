@@ -1,0 +1,27 @@
+# XcodeGen spec. `xcodegen generate` in this directory produces
+# RhobotsAVP.xcodeproj; nothing else in the tree is generated, so the sources
+# can also be dropped into a project made by hand.
+name: RhobotsAVP
+options:
+  bundleIdPrefix: io.f1r3fly
+  deploymentTarget:
+    visionOS: "2.0"
+  createIntermediateGroups: true
+
+targets:
+  RhobotsAVP:
+    type: application
+    platform: visionOS
+    sources:
+      - path: Sources
+      - path: Resources
+        buildPhase: resources
+    info:
+      path: Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.f1r3fly.rhobots
+        SWIFT_VERSION: "5.10"
+        SWIFT_STRICT_CONCURRENCY: complete
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Resources/Info.plist
