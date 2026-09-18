@@ -280,6 +280,11 @@ enum Frame {
 }
 
 enum Wire {
+    /// The host protocol this client is written against. `f1r3x-host` sends
+    /// its own on every `ready`; a mismatch is the one thing worth checking
+    /// before anything else, because the two repositories version separately.
+    static let expectedVersion = 2
+
     static func decode(_ text: String) -> Frame? {
         guard let data = text.data(using: .utf8),
               let top = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
